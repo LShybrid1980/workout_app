@@ -1,10 +1,10 @@
-<%= form_for(workout_data) do |f| %>
-  <% if workout_data.errors.any? %>
+<%= form_for(@workout_data, url: workout_datas_path(@workout_data)) do |f| %>
+  <% if @workout_data.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(workout_data.errors.count, "error") %> prohibited this workout data from being saved:</h2>
+      <h2><%= pluralize(@workout_data.errors.count, "error") %> prohibited this workout data from being saved:</h2>
 
       <ul>
-      <% workout_data.errors.full_messages.each do |message| %>
+      <% @workout_data.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

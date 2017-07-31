@@ -12,7 +12,7 @@ class WorkoutDatasController < ApplicationController
 
   def new
     @workout_data = WorkoutData.new
-    render :new, locals: { workout_data: @workout_data }
+    # render :new, locals: { workout_data: @workout_data }
   end
 
   def edit
