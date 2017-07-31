@@ -1,0 +1,6 @@
+<tr>
+  <td><%= workout_data.date %></td>
+  <td><%= link_to 'Show', workout_data %></td>
+  <td><%= link_to 'Edit', edit_workout_data_path(workout_data) %></td>
+  <td><%= link_to 'Destroy', workout_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

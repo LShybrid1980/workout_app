@@ -1,5 +1,10 @@
 class WorkoutData < ApplicationRecord
-  belongs_to :user
+  validates  :date, presence:true
 
-  has_many :upper_bodies, :lower_bodies, :arms, :legs, :cardios
+  belongs_to :user
+  has_many   :upper_bodies
+  has_many   :arms 
+  has_many   :legs 
+  has_many   :cardios
+  has_many   :lower_bodies
 end

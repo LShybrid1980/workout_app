@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :workout_data
-  devise_for :users
+  resources :workout_datas
+  resources :upper_bodies
+  resources :lower_bodies
+  resources :arms
+  resources :legs
+  resources :cardios 
+  
+  devise_for :users, controllers: { registrations: 'registrations' }
 
-  root to: "workout_data#index"
+  root to: "home#index"
 end
