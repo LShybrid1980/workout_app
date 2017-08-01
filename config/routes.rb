@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :arms
   resources :legs
   resources :cardios 
+  resources :biceps
+  resources :triceps
+  resources :forearms
   
   devise_for :users, controllers: { registrations: 'registrations' }
 

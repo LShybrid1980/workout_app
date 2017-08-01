@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728220752) do
+ActiveRecord::Schema.define(version: 20170801161428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,11 @@ ActiveRecord::Schema.define(version: 20170728220752) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "backs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "biceps", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.integer "set"
+    t.integer "rep"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,12 +54,26 @@ ActiveRecord::Schema.define(version: 20170728220752) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "forearms", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.integer "set"
+    t.integer "rep"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hamstrings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "legs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lower_backs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,6 +99,15 @@ ActiveRecord::Schema.define(version: 20170728220752) do
   end
 
   create_table "triceps", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.integer "set"
+    t.integer "rep"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "upper_backs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

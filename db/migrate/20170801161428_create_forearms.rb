@@ -1,6 +1,6 @@
-class CreateBiceps < ActiveRecord::Migration[5.1]
+class CreateForearms < ActiveRecord::Migration[5.1]
   def change
-    create_table :biceps do |t|
+    create_table :forearms do |t|
       t.string   :name
       t.integer  :weight
       t.integer  :set

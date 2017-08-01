@@ -4,4 +4,5 @@ class UpperBody < ApplicationRecord
 
   has_many   :chests
   has_many   :shoulders
+  has_many   :upper_backs
 end

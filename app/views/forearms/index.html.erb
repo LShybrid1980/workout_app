@@ -1,0 +1,36 @@
+<div class='page-header'>
+  <h1>Your Current Forearm Workout</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weights</th>
+      <th>Sets</th>
+      <th>Reps</th>    
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forearms.each do |forearm| %>
+      <tr>
+        <td><%= link_to forearm.name, forearm %></td>
+        <td><%= forearm.names %></td>
+        <td><%= link_to forearm.weight, forearm %></td>
+        <td><%= forearm.weights %></td>
+        <td><%= link_to forearm.set, forearm %></td>
+        <td><%= forearm.sets %></td>
+        <td><%= link_to forearm.rep, forearm %></td>
+        <td><%= forearm.reps %></td>
+        <td><%= link_to 'Edit', edit_forearm_path(forearm) %> | 
+            <%= link_to 'Destroy', forearm, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forearms Workout Data', new_forearm_path, class: 'btn btn-primary' %>
