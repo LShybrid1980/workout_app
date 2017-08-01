@@ -11,21 +11,19 @@ class UpperBodiesController < ApplicationController
     Event.create(user: current_user, event_type: "viewed_upper_body", details: { id: params[:id] })
 
     render :show, locals: { upper_body: @upper_body }
-  rescue ActiveRecord::RecordNotFound
+      rescue ActiveRecord::RecordNotFound
     render "errors/not_found", status: :not_found
   end
 
   def new
-    upper_body = @upper_bodies.new
-
-    render :new, locals: { upper_body: @upper_body }
+    @upper_body = UpperBody.new
   end
 
-  def create
-    upper_body = @upper_bodies.new(upper_body_params)
-    if upper_body.save
-      Event.create(user: current_user, event_type: "created_upper_body", details: { id: params[:id], params: upper_body_params })
-      redirect_to [@upper_body]
+ def create
+    @upper_body = UpperBody.new(upper_body_params)
+
+    if @upper_body.save
+      redirect_to @upper_body, notice: 'Workout data was successfully created.'
     else
       render :new, locals: { upper_body: @upper_body }
     end

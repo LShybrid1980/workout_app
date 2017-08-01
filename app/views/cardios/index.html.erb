@@ -1,0 +1,26 @@
+<div class='page-header'>
+  <h1>Your Current Cardio Workout</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      
+          
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardios.each do |cardio| %>
+      <tr>
+        <td><%= link_to 'Edit', edit_cardio_path(cardio) %> | 
+            <%= link_to 'Destroy', cardio, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cardio Workout Data', new_cardio_path, class: 'btn btn-primary' %>

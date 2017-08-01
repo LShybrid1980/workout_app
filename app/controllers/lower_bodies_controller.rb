@@ -16,16 +16,14 @@ class LowerBodiesController < ApplicationController
   end
 
   def new
-    lower_body = @lower_bodies.new
-
-    render :new, locals: { lower_body: @lower_body }
+    @lower_body = LowerBody.new
   end
 
   def create
-    lower_body = @lower_bodies.new(lower_body_params)
-    if lower_body.save
-      Event.create(user: current_user, event_type: "created_lower_body", details: { id: params[:id], params: lower_body_params })
-      redirect_to [@lower_body]
+    @lower_body = LowerBody.new(lower_body_params)
+
+    if @lower_body.save
+      redirect_to @lower_body, notice: 'Workout data was successfully created.'
     else
       render :new, locals: { lower_body: @lower_body }
     end

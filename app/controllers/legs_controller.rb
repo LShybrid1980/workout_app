@@ -16,16 +16,14 @@ class LegsController < ApplicationController
   end
 
   def new
-    leg = @legs.new
-
-    render :new, locals: { leg: @leg }
+    @leg = Leg.new
   end
 
   def create
-    leg = @legs.new(leg_params)
-    if leg.save
-      Event.create(user: current_user, event_type: "created_leg", details: { id: params[:id], params: leg_params })
-      redirect_to [@leg]
+    @leg = Leg.new(leg_params)
+
+    if @leg.save
+      redirect_to @leg, notice: 'Workout data was successfully created.'
     else
       render :new, locals: { leg: @leg }
     end

@@ -16,16 +16,14 @@ class CardiosController < ApplicationController
   end
 
   def new
-    cardio = @cardios.new
-
-    render :new, locals: { cardio: @cardio }
+    @cardio = Cardio.new
   end
 
   def create
-    cardio = @cardios.new(cardio_params)
-    if cardio.save
-      Event.create(user: current_user, event_type: "created_cardio", details: { id: params[:id], params: cardio_params })
-      redirect_to [@cardio]
+    @cardio = Cardio.new(cardio_params)
+
+    if @cardio.save
+      redirect_to @cardio, notice: 'Workout data was successfully created.'
     else
       render :new, locals: { cardio: @cardio }
     end

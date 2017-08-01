@@ -16,16 +16,14 @@ class ArmsController < ApplicationController
   end
 
   def new
-    arm = @arms.new
-
-    render :new, locals: { arm: @arm }
+    @arm = Arm.new
   end
 
   def create
-    arm = @arms.new(arm_params)
-    if arm.save
-      Event.create(user: current_user, event_type: "created_arm", details: { id: params[:id], params: arm_params })
-      redirect_to [@arm]
+    @arm = Arm.new(arm_params)
+
+    if @arm.save
+      redirect_to @arm, notice: 'Arms Workout data was successfully created.'
     else
       render :new, locals: { arm: @arm }
     end

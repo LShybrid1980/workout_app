@@ -1,0 +1,26 @@
+<div class='page-header'>
+  <h1>Your Current Legs Workout</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      
+          
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legs.each do |leg| %>
+      <tr>
+        <td><%= link_to 'Edit', edit_leg_path(leg) %> | 
+            <%= link_to 'Destroy', leg, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workout Data', new_leg_path, class: 'btn btn-primary' %>
