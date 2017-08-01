@@ -1,0 +1,36 @@
+<div class='page-header'>
+  <h1>Your Current upper_back Workout</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weights</th>
+      <th>Sets</th>
+      <th>Reps</th>    
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @upper_backs.each do |upper_back| %>
+      <tr>
+        <td><%= link_to upper_back.name, upper_back %></td>
+        <td><%= upper_back.names %></td>
+        <td><%= link_to upper_back.weight, upper_back %></td>
+        <td><%= upper_back.weights %></td>
+        <td><%= link_to upper_back.set, upper_back %></td>
+        <td><%= upper_back.sets %></td>
+        <td><%= link_to upper_back.rep, upper_back %></td>
+        <td><%= upper_back.reps %></td>
+        <td><%= link_to 'Edit', edit_upper_back_path(upper_back) %> | 
+            <%= link_to 'Destroy', upper_back, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Upper Backs Workout Data', new_upper_back_path, class: 'btn btn-primary' %>

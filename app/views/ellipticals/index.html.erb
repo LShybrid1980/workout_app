@@ -1,0 +1,36 @@
+<div class='page-header'>
+  <h1>Your Current Elliptical Workout Data</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Speed</th>
+      <th>Time</th>
+      <th>Distance</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ellipticals.each do |elliptical| %>
+      <tr>
+        <td><%= link_to elliptical.name, elliptical %></td>
+        <td><%= elliptical.names %></td>
+        <td><%= link_to elliptical.speed, elliptical %></td>
+        <td><%= elliptical.speeds %></td>
+        <td><%= link_to elliptical.time, elliptical %></td>
+        <td><%= elliptical.times %></td>
+        <td><%= link_to elliptical.distance, elliptical %></td>
+        <td><%= elliptical.distances %></td>
+        <td><%= link_to 'Edit', edit_elliptical_path(elliptical) %> | 
+            <%= link_to 'Destroy', elliptical, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ellipticals Workout Data', new_elliptical_path, class: 'btn btn-primary' %>index.html.erb

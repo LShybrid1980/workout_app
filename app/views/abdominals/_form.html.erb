@@ -1,0 +1,40 @@
+<div class='well bs-component col-lg-8'>
+  <%= form_for(@abdominal, url: abdominals_path(@abdominal)) do |f| %>
+    <% if @abdominal.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@abdominal.errors.count, "error") %> prohibited this abdominals workout data from being saved:</h2>
+
+        <ul>
+        <% @abdominal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='form-group'>
+        <%= f.label :name, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.text_field :name, class: 'form-control', autofocus: true %>
+        </div>  
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :set, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :set, class: 'form-control', autofocus: true %>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :rep, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :rep, class: 'form-control', autofocus: true %>
+        </div>  
+      </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>  

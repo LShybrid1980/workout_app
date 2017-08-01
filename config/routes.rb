@@ -8,6 +8,16 @@ Rails.application.routes.draw do
   resources :biceps
   resources :triceps
   resources :forearms
+  resources :shoulders
+  resources :chests
+  resources :upper_backs
+  resources :abdominals
+  resources :lower_backs
+  resources :hamstrings
+  resources :calves
+  resources :quads
+  resources :threadmills
+  resources :ellipticals
   
   devise_for :users, controllers: { registrations: 'registrations' }
 

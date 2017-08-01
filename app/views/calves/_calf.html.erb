@@ -1,0 +1,9 @@
+<tr>
+  <td><%= calf.name %></td>
+  <td><%= calf.weight %></td>
+  <td><%= calf.set %></td>
+  <td><%= calf.rep %></td>
+  <td><%= link_to 'Show', calf %></td>
+  <td><%= link_to 'Edit', edit_calf_path(calf) %></td>
+  <td><%= link_to 'Destroy', calf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
