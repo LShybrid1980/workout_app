@@ -14,7 +14,6 @@
     <% @workout_datas.each do |workout_data| %>
       <tr>
         <td><%= link_to workout_data.date, workout_data %></td>
-        <td><%= workout_data.dates %></td>
         <td><%= link_to 'Edit', edit_workout_data_path(workout_data) %> | 
             <%= link_to 'Destroy', workout_data, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -26,3 +25,4 @@
 <br>
 
 <%= link_to 'New Workout Data', new_workout_data_path, class: 'btn btn-primary' %>
+        

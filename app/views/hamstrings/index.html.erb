@@ -15,14 +15,10 @@
   <tbody>
     <% @hamstrings.each do |hamstring| %>
       <tr>
-        <td><%= link_to hamstring.name, hamstring %></td>
-        <td><%= hamstring.names %></td>
+        <td><%= link_to hamstring.status_type, hamstring %></td>
         <td><%= link_to hamstring.weight, hamstring %></td>
-        <td><%= hamstring.weights %></td>
         <td><%= link_to hamstring.set, hamstring %></td>
-        <td><%= hamstring.sets %></td>
         <td><%= link_to hamstring.rep, hamstring %></td>
-        <td><%= hamstring.reps %></td>
         <td><%= link_to 'Edit', edit_hamstring_path(hamstring) %> | 
             <%= link_to 'Destroy', hamstring, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Hamstrings Workout Data', new_hamstring_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

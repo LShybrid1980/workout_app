@@ -49,6 +49,6 @@ class BicepsController < ApplicationController
   end
 
   def bicep_params
-    params.require(:bicep).permit(:name, :wieght, :set, :rep)
+    params.require(:bicep).permit(:status_type, :weight, :set, :rep)
   end
 end

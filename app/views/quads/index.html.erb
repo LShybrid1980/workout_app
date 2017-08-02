@@ -15,14 +15,10 @@
   <tbody>
     <% @quads.each do |quad| %>
       <tr>
-        <td><%= link_to quad.name, quad %></td>
-        <td><%= quad.names %></td>
+        <td><%= link_to quad.status_type, quad %></td>
         <td><%= link_to quad.weight, quad %></td>
-        <td><%= quad.weights %></td>
         <td><%= link_to quad.set, quad %></td>
-        <td><%= quad.sets %></td>
         <td><%= link_to quad.rep, quad %></td>
-        <td><%= quad.reps %></td>
         <td><%= link_to 'Edit', edit_quad_path(quad) %> | 
             <%= link_to 'Destroy', quad, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Quads Workout Data', new_quad_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

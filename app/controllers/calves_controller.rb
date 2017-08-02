@@ -2,8 +2,8 @@ class CalvesController < ApplicationController
   before_action :set_calf, only: [:show, :edit, :update, :destroy]
 
   def index
-    @calfs = Calf.all
-    render :index, locals: { calfs: @calfs}
+    @calves = Calf.all
+    render :index, locals: { calves: @calves}
   end
 
   def show
@@ -48,6 +48,6 @@ class CalvesController < ApplicationController
   end
 
   def calf_params
-    params.require(:calf).permit(:name, :wieght, :set, :rep)
+    params.require(:calf).permit(:status_type, :weight, :set, :rep)
   end
 end

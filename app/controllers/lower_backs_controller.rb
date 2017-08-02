@@ -48,6 +48,6 @@ class LowerBacksController < ApplicationController
   end
 
   def lower_back_params
-    params.require(:lower_back).permit(:name, :wieght, :set, :rep)
+    params.require(:lower_back).permit(:status_type, :weight, :set, :rep)
   end
 end

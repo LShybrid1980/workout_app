@@ -48,6 +48,6 @@ class HamstringsController < ApplicationController
   end
 
   def hamstring_params
-    params.require(:hamstring).permit(:name, :wieght, :set, :rep)
+    params.require(:hamstring).permit(:status_type, :weight, :set, :rep)
   end
 end

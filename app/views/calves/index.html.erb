@@ -15,14 +15,10 @@
   <tbody>
     <% @calves.each do |calf| %>
       <tr>
-        <td><%= link_to calf.name, calf %></td>
-        <td><%= calf.names %></td>
+        <td><%= link_to calf.status_type, calf %></td>
         <td><%= link_to calf.weight, calf %></td>
-        <td><%= calf.weights %></td>
         <td><%= link_to calf.set, calf %></td>
-        <td><%= calf.sets %></td>
         <td><%= link_to calf.rep, calf %></td>
-        <td><%= calf.reps %></td>
         <td><%= link_to 'Edit', edit_calf_path(calf) %> | 
             <%= link_to 'Destroy', calf, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Calves Workout Data', new_calf_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

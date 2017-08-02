@@ -15,14 +15,10 @@
   <tbody>
     <% @triceps.each do |tricep| %>
       <tr>
-        <td><%= link_to tricep.name, tricep %></td>
-        <td><%= tricep.names %></td>
+        <td><%= link_to tricep.status_type, tricep %></td>
         <td><%= link_to tricep.weight, tricep %></td>
-        <td><%= tricep.weights %></td>
         <td><%= link_to tricep.set, tricep %></td>
-        <td><%= tricep.sets %></td>
         <td><%= link_to tricep.rep, tricep %></td>
-        <td><%= tricep.reps %></td>
         <td><%= link_to 'Edit', edit_tricep_path(tricep) %> | 
             <%= link_to 'Destroy', tricep, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Triceps Workout Data', new_tricep_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

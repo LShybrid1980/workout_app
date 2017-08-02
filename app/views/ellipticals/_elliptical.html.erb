@@ -1,8 +1,10 @@
 <tr>
-  <td><%= elliptical.name %></td>
+  <td><%= elliptical.status_type %></td>
   <td><%= elliptical.speed %></td>
   <td><%= elliptical.time %></td>
   <td><%= elliptical.distance %></td>
+  <td><%= elliptical.resistance %></td>
+  <td><%= elliptical.incline %></td>
   <td><%= link_to 'Show', elliptical %></td>
   <td><%= link_to 'Edit', edit_elliptical_path(elliptical) %></td>
   <td><%= link_to 'Destroy', elliptical, method: :delete, data: { confirm: 'Are you sure?' } %></td>

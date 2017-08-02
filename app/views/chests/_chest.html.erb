@@ -1,8 +1,8 @@
 <tr>
-  <td><%= chest.name %></td>
-  <td><%= chest.weight %></td>
-  <td><%= chest.set %></td>
-  <td><%= chest.rep %></td>
+  <td>Name: <%= chest.status_type %></td>
+  <td>Weight: <%= chest.weight %></td>
+  <td>Sets: <%= chest.set %></td>
+  <td>Reps: <%= chest.rep %></td>
   <td><%= link_to 'Show', chest %></td>
   <td><%= link_to 'Edit', edit_chest_path(chest) %></td>
   <td><%= link_to 'Destroy', chest, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -15,14 +15,10 @@
   <tbody>
     <% @biceps.each do |bicep| %>
       <tr>
-        <td><%= link_to bicep.name, bicep %></td>
-        <td><%= bicep.names %></td>
+        <td><%= link_to bicep.status_type, bicep %></td>
         <td><%= link_to bicep.weight, bicep %></td>
-        <td><%= bicep.weights %></td>
         <td><%= link_to bicep.set, bicep %></td>
-        <td><%= bicep.sets %></td>
         <td><%= link_to bicep.rep, bicep %></td>
-        <td><%= bicep.reps %></td>
         <td><%= link_to 'Edit', edit_bicep_path(bicep) %> | 
             <%= link_to 'Destroy', bicep, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>

@@ -15,14 +15,10 @@
   <tbody>
     <% @chests.each do |chest| %>
       <tr>
-        <td><%= link_to chest.name, chest %></td>
-        <td><%= chest.names %></td>
+        <td><%= link_to chest.status_type, chest %></td>
         <td><%= link_to chest.weight, chest %></td>
-        <td><%= chest.weights %></td>
         <td><%= link_to chest.set, chest %></td>
-        <td><%= chest.sets %></td>
         <td><%= link_to chest.rep, chest %></td>
-        <td><%= chest.reps %></td>
         <td><%= link_to 'Edit', edit_chest_path(chest) %> | 
             <%= link_to 'Destroy', chest, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Chests Workout Data', new_chest_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

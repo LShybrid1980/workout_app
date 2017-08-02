@@ -49,6 +49,6 @@ class ForearmsController < ApplicationController
   end
 
   def forearm_params
-    params.require(:forearm).permit(:name, :wieght, :set, :rep)
+    params.require(:forearm).permit(:status_type, :weight, :set, :rep)
   end
 end

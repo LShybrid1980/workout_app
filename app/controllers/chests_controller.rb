@@ -48,6 +48,6 @@ class ChestsController < ApplicationController
   end
 
   def chest_params
-    params.require(:chest).permit(:name, :wieght, :set, :rep)
+    params.require(:chest).permit(:status_type, :weight, :set, :rep)
   end
 end

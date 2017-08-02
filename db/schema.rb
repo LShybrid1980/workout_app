@@ -1,4 +1,4 @@
-s# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   enable_extension "plpgsql"
 
   create_table "abdominals", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
+    t.integer "weight"
     t.integer "set"
     t.integer "rep"
     t.datetime "created_at", null: false
@@ -29,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "biceps", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -38,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "calves", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -52,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "chests", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -61,16 +62,18 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "ellipticals", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "speed"
-    t.time "time"
+    t.integer "time"
     t.integer "distance"
+    t.integer "incline"
+    t.integer "resistance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "forearms", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -79,7 +82,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "hamstrings", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -93,7 +96,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "lower_backs", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -107,7 +110,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "quads", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -116,7 +119,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "shoulders", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -124,10 +127,10 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "threadmills", force: :cascade do |t|
-    t.string "name"
+  create_table "treadmills", force: :cascade do |t|
+    t.string "status_type"
     t.integer "speed"
-    t.time "time"
+    t.integer "time"
     t.integer "incline"
     t.float "distance"
     t.datetime "created_at", null: false
@@ -135,7 +138,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "triceps", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
@@ -144,7 +147,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
   end
 
   create_table "upper_backs", force: :cascade do |t|
-    t.string "name"
+    t.string "status_type"
     t.integer "weight"
     t.integer "set"
     t.integer "rep"

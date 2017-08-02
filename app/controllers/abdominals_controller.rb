@@ -48,6 +48,6 @@ class AbdominalsController < ApplicationController
   end
 
   def abdominal_params
-    params.require(:abdominal).permit(:name, :wieght, :set, :rep)
+    params.require(:abdominal).permit(:status_type, :weight, :set, :rep)
   end
 end

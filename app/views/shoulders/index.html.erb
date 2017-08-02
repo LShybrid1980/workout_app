@@ -15,14 +15,10 @@
   <tbody>
     <% @shoulders.each do |shoulder| %>
       <tr>
-        <td><%= link_to shoulder.name, shoulder %></td>
-        <td><%= shoulder.names %></td>
+        <td><%= link_to shoulder.status_type, shoulder %></td>
         <td><%= link_to shoulder.weight, shoulder %></td>
-        <td><%= shoulder.weights %></td>
         <td><%= link_to shoulder.set, shoulder %></td>
-        <td><%= shoulder.sets %></td>
         <td><%= link_to shoulder.rep, shoulder %></td>
-        <td><%= shoulder.reps %></td>
         <td><%= link_to 'Edit', edit_shoulder_path(shoulder) %> | 
             <%= link_to 'Destroy', shoulder, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Shoulders Workout Data', new_shoulder_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

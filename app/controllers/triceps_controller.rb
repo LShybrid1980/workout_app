@@ -19,7 +19,7 @@ class TricepsController < ApplicationController
   end
 
   def create
-    @tricep = tricep.new(tricep_params)
+    @tricep = Tricep.new(tricep_params)
 
     if @tricep.save
       redirect_to @tricep, notice: 'Triceps Workout data was successfully created.'
@@ -48,6 +48,6 @@ class TricepsController < ApplicationController
   end
 
   def tricep_params
-    params.require(:tricep).permit(:name, :wieght, :set, :rep)
+    params.require(:tricep).permit(:status_type, :weight, :set, :rep)
   end
 end

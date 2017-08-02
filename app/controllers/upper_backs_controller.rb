@@ -48,6 +48,6 @@ class UpperBacksController < ApplicationController
   end
 
   def upper_back_params
-    params.require(:upper_back).permit(:name, :wieght, :set, :rep)
+    params.require(:upper_back).permit(:status_type, :weight, :set, :rep)
   end
 end

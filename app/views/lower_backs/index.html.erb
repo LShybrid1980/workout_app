@@ -15,14 +15,10 @@
   <tbody>
     <% @lower_backs.each do |lower_back| %>
       <tr>
-        <td><%= link_to lower_back.name, lower_back %></td>
-        <td><%= lower_back.names %></td>
+        <td><%= link_to lower_back.status_type, lower_back %></td>
         <td><%= link_to lower_back.weight, lower_back %></td>
-        <td><%= lower_back.weights %></td>
         <td><%= link_to lower_back.set, lower_back %></td>
-        <td><%= lower_back.sets %></td>
         <td><%= link_to lower_back.rep, lower_back %></td>
-        <td><%= lower_back.reps %></td>
         <td><%= link_to 'Edit', edit_lower_back_path(lower_back) %> | 
             <%= link_to 'Destroy', lower_back, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,3 +30,7 @@
 <br>
 
 <%= link_to 'New Lower Backs Workout Data', new_lower_back_path, class: 'btn btn-primary' %>
+        
+        
+        
+        

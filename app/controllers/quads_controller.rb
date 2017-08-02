@@ -48,6 +48,6 @@ class QuadsController < ApplicationController
   end
 
   def quad_params
-    params.require(:quad).permit(:name, :wieght, :set, :rep)
+    params.require(:quad).permit(:status_type, :weight, :set, :rep)
   end
 end

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :hamstrings
   resources :calves
   resources :quads
-  resources :threadmills
+  resources :treadmills
   resources :ellipticals
   
   devise_for :users, controllers: { registrations: 'registrations' }

@@ -48,6 +48,6 @@ class EllipticalsController < ApplicationController
   end
 
   def elliptical_params
-    params.require(:elliptical).permit(:name, :wieght, :set, :rep)
+    params.require(:elliptical).permit(:status_type, :speed, :time, :distance, :resistance, :incline)
   end
 end

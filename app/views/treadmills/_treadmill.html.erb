@@ -1,0 +1,10 @@
+<tr>
+  <td><%= treadmill.status_type %></td>
+  <td><%= treadmill.speed %></td>
+  <td><%= treadmill.time %></td>
+  <td><%= treadmill.incline %></td>
+  <td><%= treadmill.distance %></td>
+  <td><%= link_to 'Show', treadmill %></td>
+  <td><%= link_to 'Edit', edit_treadmill_path(treadmill) %></td>
+  <td><%= link_to 'Destroy', treadmill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -13,30 +13,30 @@
     <% end %>
 
     <div class='form-group'>
-        <%= f.label :name, class: 'col-lg-2' %>
+        <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.text_field :name, class: 'form-control', autofocus: true %>
+          <%= f.select(:status_type, options_for_select([['Bench Dips', 'Bench Dips'], ['Cable One-arm Tricep Extension', 'Cable One-arm Tricep Extension'], ['Dumbbell One-arm Tricep Extension', 'Dumbbell One-arm Tricep Extension'], ['Incline Barbell Triceps Extension', 'Incline Barbell Triceps Extension'], ['Seated Triceps Press', 'Seated Triceps Press'], ['Standing Dumbbell Triceps Extension', 'Standing Dumbbell Triceps Extension'], ['Standing Bent-over One-arm Dumbbell Triceps', 'Standing Bent-over One-arm Dumbbell Triceps']])) %><br><br>
         </div>  
       </div>
 
       <div class='form-group'>
         <%= f.label :weight, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :weight, class: 'form-control', autofocus: true %>
+          <%= f.number_field :weight, class: 'form-control', autofocus: true %><br>
         </div>
       </div>
 
       <div class='form-group'>
         <%= f.label :set, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :set, class: 'form-control', autofocus: true %>
+          <%= f.number_field :set, class: 'form-control', autofocus: true %><br>
         </div>
       </div>
 
       <div class='form-group'>
         <%= f.label :rep, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :rep, class: 'form-control', autofocus: true %>
+          <%= f.number_field :rep, class: 'form-control', autofocus: true %><br>
         </div>  
       </div>
 

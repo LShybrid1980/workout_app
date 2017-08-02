@@ -13,30 +13,45 @@
     <% end %>
 
     <div class='form-group'>
-        <%= f.label :name, class: 'col-lg-2' %>
+        <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.text_field :name, class: 'form-control', autofocus: true %>
-        </div>  
+          <%= f.select(:status_type, options_for_select([['Core Workout', 'Core Workout'], ['Short Interval', 'Short Interval'], ['Interval Workout', 'Interval Workout'], ['Interval Shrinking Recovery', 'Interval Shrinking Recovery'], ['30 Minute Workout', '30 Minute Workout']])) %><br><br>
+        </div>   
       </div>
 
       <div class='form-group'>
         <%= f.label :speed, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :speed, class: 'form-control', autofocus: true %>
+          <%= f.number_field :speed, class: 'form-control', autofocus: true %><br>
         </div>
       </div>
 
       <div class='form-group'>
         <%= f.label :time, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.time_field :time, class: 'form-control', autofocus: true %>
+          <%= f.number_field :time, class: 'form-control', autofocus: true %>
+          <p>(by minutes)</p><br>
         </div>
       </div>
 
       <div class='form-group'>
         <%= f.label :distance, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :distance, class: 'form-control', autofocus: true %>
+          <%= f.number_field :distance, class: 'form-control', autofocus: true %><br>
+        </div>  
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :resistance, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :resistance, class: 'form-control', autofocus: true %><br>
+        </div>  
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :incline, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :incline, class: 'form-control', autofocus: true %><br>
         </div>  
       </div>
 

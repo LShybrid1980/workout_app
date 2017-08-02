@@ -48,6 +48,6 @@ class ShouldersController < ApplicationController
   end
 
   def shoulder_params
-    params.require(:shoulder).permit(:name, :wieght, :set, :rep)
+    params.require(:shoulder).permit(:status_type, :weight, :set, :rep)
   end
 end

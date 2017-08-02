@@ -1,0 +1,39 @@
+<div class='page-header'>
+  <h1>Your Current Treadmill Workout Data</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Speed</th>
+      <th>Time</th>
+      <th>Incline</th>   
+      <th>Distance</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treadmills.each do |treadmill| %>
+      <tr>
+        <td><%= link_to treadmill.status_type, treadmill %></td>
+        <td><%= link_to treadmill.speed, treadmill %></td>
+        <td><%= link_to treadmill.time, treadmill %></td>
+        <td><%= link_to treadmill.incline, treadmill %></td>
+        <td><%= link_to treadmill.distance, treadmill %></td>
+        <td><%= link_to 'Edit', edit_treadmill_path(treadmill) %> | 
+            <%= link_to 'Destroy', treadmill, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Treadmills Workout Data', new_treadmill_path, class: 'btn btn-primary' %>
+        
+        
+        
+        
+        

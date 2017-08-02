@@ -13,30 +13,30 @@
     <% end %>
 
     <div class='form-group'>
-        <%= f.label :name, class: 'col-lg-2' %>
+        <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.text_field :name, class: 'form-control', autofocus: true %>
+          <%= f.select(:status_type, options_for_select([['Barbell Full Squat', 'Barbell Full Squat'], ['Barbell Walking Lunge', 'Barbell Walking Lunge'], ['Barbell Step Ups', 'Barbell Step Ups'], ['Barbell Lunge', 'Barbell Lunge'], ['Bench Jump', 'Bench Jump'], ['Bodyweight Lunge', 'Bodyweight Lunge']])) %><br><br>
         </div>  
       </div>
 
       <div class='form-group'>
         <%= f.label :weight, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :weight, class: 'form-control', autofocus: true %>
+          <%= f.number_field :weight, class: 'form-control', autofocus: true %><br>
         </div>
       </div>
 
       <div class='form-group'>
         <%= f.label :set, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :set, class: 'form-control', autofocus: true %>
+          <%= f.number_field :set, class: 'form-control', autofocus: true %><br>
         </div>
       </div>
 
       <div class='form-group'>
         <%= f.label :rep, class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.number_field :rep, class: 'form-control', autofocus: true %>
+          <%= f.number_field :rep, class: 'form-control', autofocus: true %><br>
         </div>  
       </div>
 

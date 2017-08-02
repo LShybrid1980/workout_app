@@ -15,12 +15,10 @@
   <tbody>
     <% @abdominals.each do |abdominal| %>
       <tr>
-        <td><%= link_to abdominal.name, abdominal %></td>
-        <td><%= abdominal.names %></td>
+        <td><%= link_to abdominal.status_type, abdominal %></td>
+        <td><%= link_to abdominal.weight, abdominal %></td>
         <td><%= link_to abdominal.set, abdominal %></td>
-        <td><%= abdominal.sets %></td>
         <td><%= link_to abdominal.rep, abdominal %></td>
-        <td><%= abdominal.reps %></td>
         <td><%= link_to 'Edit', edit_abdominal_path(abdominal) %> | 
             <%= link_to 'Destroy', abdominal, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>

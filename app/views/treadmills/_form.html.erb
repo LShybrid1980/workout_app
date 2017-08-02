@@ -1,0 +1,56 @@
+<div class='well bs-component col-lg-8'>
+  <%= form_for(@treadmill, url: treadmills_path(@treadmill)) do |f| %>
+    <% if @treadmill.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@treadmill.errors.count, "error") %> prohibited this treadmills workout data from being saved:</h2>
+
+        <ul>
+        <% @treadmill.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='form-group'>
+        <%= f.label "Name", class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.select(:status_type, options_for_select([['Walk-jog', 'Walk-jog'], ['Switch to Sprints', 'Switch to Sprints'], ['Pyramid Intervals', 'Pyramid Intervals'], ['Get in, Get out', 'Get in, Get out'], ['Work your way up the ladder', 'Work your way up the ladder'], ['The 500-calorie', 'The 500-calorie'], ['Climb a Hill', 'Climb a Hill'], ['Go for a Hike', 'Go for a Hike'], ['Graduate to a Mountain', 'Graduate to a Mountain'], ['Build Strength', 'Build Strength'], ['Blast Fat', 'Blast Fat'], ['Do Double Duty', 'Do Double Duty']])) %><br><br>
+        </div> 
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :speed, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :speed, class: 'form-control', autofocus: true %><br>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :time, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :time, class: 'form-control', autofocus: true %>
+          <p>(by minutes)</p><br>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :incline, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :incline, class: 'form-control', autofocus: true %><br>
+        </div>  
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :distance, class: 'col-lg-2' %>
+        <div class='col-lg-10'>
+          <%= f.number_field :distance, class: 'form-control', autofocus: true %><br>
+        </div>  
+      </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>  
+          
