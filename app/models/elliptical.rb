@@ -1,4 +1,6 @@
 class Elliptical < ApplicationRecord
+  belongs_to :cardio
+
   validates :status_type, presence: true
   validates :time, presence: true
   validates :speed, presence: true

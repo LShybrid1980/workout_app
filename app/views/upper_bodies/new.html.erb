@@ -2,8 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Shoulders', shoulders_path %>
-<%= link_to 'Chest', chests_path %>
-<%= link_to 'Upper Back', upper_backs_path %>
+<h3>What part of your upper body do you want to workout?</h3>
 
-<%= link_to 'Back', upper_bodies_path %>
+<%= link_to 'Shoulders', new_shoulder_path %>
+<%= link_to 'Chest', new_chest_path %>
+<%= link_to 'Upper Back', new_upper_back_path %>
+
+<%= link_to 'Back', new_workout_data_path %>

@@ -13,10 +13,10 @@
     <% end %>
 
     <div class='form-group'>
-        <%= f.label :name, class: 'col-lg-2' %>
+        <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.text_field :name, class: 'form-control', autofocus: true %><br>
-        </div>  
+          <%= f.select(:status_type, options_for_select([['Single-arm Barbell Row', 'Single-arm Barbell Row'], ['Single-arm Cable Row', 'Single-arm Cable Row'], ['Single-arm Smith Machine Shrug', 'Single-arm Smith Machine Shrug'], ['Single-arm Overhead Machine Pulldown', 'Single-arm Overhead Machine Pulldown'], ['Incline Dumbbell Row', 'Incline Dumbbell Row'], ['Bent-over Dumbbell Row', 'Bent-over Dumbbell Row'], ['Wide-grip Lat Pull-down', 'Wide-grip Lat Pull-down']])) %><br><br>
+        </div> 
       </div>
 
       <div class='form-group'>

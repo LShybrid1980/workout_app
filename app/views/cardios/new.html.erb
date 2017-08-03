@@ -2,7 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Treadmill', treadmills_path %>
-<%= link_to 'Elliptical', ellipticals_path %>
+<h3>What kind of cardio machine are you going to use?</h3>
 
-<%= link_to 'Back', cardios_path %>
+<%= link_to 'Treadmill', new_treadmill_path %>
+<%= link_to 'Elliptical', new_elliptical_path %>
+
+<%= link_to 'Back', new_workout_data_path %>

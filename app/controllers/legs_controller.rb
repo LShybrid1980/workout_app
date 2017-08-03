@@ -3,7 +3,7 @@ class LegsController < ApplicationController
 
   def index
     @legs = Leg.all
-    render :index, locals: { legs: @legs }
+    render :index, locals: { legs: @legs}
   end
 
   def show

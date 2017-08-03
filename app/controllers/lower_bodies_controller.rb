@@ -3,7 +3,7 @@ class LowerBodiesController < ApplicationController
 
   def index
     @lower_bodies = LowerBody.all
-    render :index, locals: { lower_bodies: @lower_bodies }
+    render :index, locals: { lower_bodies: @lower_bodies}
   end
 
   def show

@@ -15,7 +15,7 @@
   <tbody>
     <% @upper_backs.each do |upper_back| %>
       <tr>
-        <td><%= link_to upper_back.name, upper_back %></td>
+        <td><%= link_to upper_back.status_type, upper_back %></td>
         <td><%= link_to upper_back.weight, upper_back %></td>
         <td><%= link_to upper_back.set, upper_back %></td>
         <td><%= link_to upper_back.rep, upper_back %></td>

@@ -3,7 +3,7 @@ class ArmsController < ApplicationController
 
   def index
     @arms = Arm.all
-    render :index, locals: { arms: @arms }
+    render :index, locals: { arms: @arms}
   end
 
   def show

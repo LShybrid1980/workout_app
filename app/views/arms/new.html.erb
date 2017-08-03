@@ -2,8 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Biceps', biceps_path %>
-<%= link_to 'Triceps', triceps_path %>
-<%= link_to 'Forearms', forearms_path %>
+<h3>Which part of the arm do you want to workout?</h3>
 
-<%= link_to 'Back', arms_path %>
+<%= link_to 'Biceps', new_bicep_path %> |
+<%= link_to 'Triceps', new_tricep_path %> |
+<%= link_to 'Forearms', new_forearm_path %> |
+
+<%= link_to 'Back', new_workout_data_path %>

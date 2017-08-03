@@ -3,7 +3,7 @@ class UpperBodiesController < ApplicationController
 
   def index
     @upper_bodies = UpperBody.all
-    render :index, locals: { upper_bodies: @upper_bodies }
+    render :index, locals: { upper_bodies: @upper_bodies}
   end
 
   def show

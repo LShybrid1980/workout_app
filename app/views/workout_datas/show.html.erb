@@ -2,5 +2,18 @@
 
 <h1><%= workout_data.date %></h1>
 
+<h3>What do you want to workout today?</h3>
+
+<%= link_to 'Arms', new_arm_path %> |
+<%= link_to 'Cardio', new_cardio_path %> |
+<%= link_to 'Legs', new_leg_path %> |
+<%= link_to 'Lower Body', new_lower_body_path %> |
+<%= link_to 'Upper Body', new_upper_body_path %> |
+<%= link_to 'Back', workout_datas_path %> |
 <%= link_to 'Edit', edit_workout_data_path(workout_data) %> |
 <%= link_to 'Back', workout_datas_path %>
+
+
+
+
+

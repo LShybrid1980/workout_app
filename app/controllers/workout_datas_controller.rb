@@ -12,7 +12,6 @@ class WorkoutDatasController < ApplicationController
 
   def new
     @workout_data = WorkoutData.new
-    # render :new, locals: { workout_data: @workout_data }
   end
 
   def edit
@@ -21,9 +20,10 @@ class WorkoutDatasController < ApplicationController
 
   def create
     @workout_data = WorkoutData.new(workout_data_params)
+    @workout_data.user = current_user
 
     if @workout_data.save
-      redirect_to @workout_data, notice: 'Workout data was successfully created.'
+      redirect_to workout_data_path(@workout_data), notice: 'Workout data was successfully created.'
     else
       render :new, locals: { workout_data: @workout_data }
     end
@@ -48,7 +48,7 @@ class WorkoutDatasController < ApplicationController
    @workout_data = WorkoutData.find(params[:id])
   end
 
-  def workout_data_params
+  def workout_data_params  
     params.require(:workout_data).permit(:date)
   end
 end

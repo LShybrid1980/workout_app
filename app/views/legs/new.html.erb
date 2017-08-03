@@ -2,8 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Hamstring', hamstrings_path %>
-<%= link_to 'Calves', calves_path %>
-<%= link_to 'Quads', quads_path %>
+<h3>What part of leg do you want to workout?</h3>
 
-<%= link_to 'Back', legs_path %>
+<%= link_to 'Hamstring', new_hamstring_path %>
+<%= link_to 'Calves', new_calf_path %>
+<%= link_to 'Quads', new_quad_path %>
+
+<%= link_to 'Back', new_workout_data_path %>

@@ -2,7 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Abs', abdominals_path %>
-<%= link_to 'Lower Back', lower_backs_path %>
+<h3>What part of your lower body do you want to workout?</h3>
 
-<%= link_to 'Back', lower_bodies_path %>
+<%= link_to 'Abs', new_abdominal_path %>
+<%= link_to 'Lower Back', new_lower_back_path %>
+
+<%= link_to 'Back', new_workout_data_path %>

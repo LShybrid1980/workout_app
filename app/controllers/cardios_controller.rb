@@ -3,7 +3,7 @@ class CardiosController < ApplicationController
 
   def index
     @cardios = Cardio.all
-    render :index, locals: { cardios: @cardios }
+    render :index, locals: { cardios: @cardios}
   end
 
   def show
