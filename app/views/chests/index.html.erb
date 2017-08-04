@@ -19,7 +19,7 @@
         <td><%= link_to chest.weight, chest %></td>
         <td><%= link_to chest.set, chest %></td>
         <td><%= link_to chest.rep, chest %></td>
-        <td><%= link_to 'Edit', edit_chest_path(chest) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_chest_path(chest) %> | 
             <%= link_to 'Destroy', chest, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Chests Workout Data', new_chest_path, class: 'btn btn-primary' %>
+<%= link_to 'New Chests Workout Data', new_workout_data_chest_path, class: 'btn btn-primary' %>
         
         
         

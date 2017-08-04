@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801161428) do
+ActiveRecord::Schema.define(version: 20170804133150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,14 +20,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "arms", force: :cascade do |t|
-    t.integer "bicep_id"
-    t.integer "tricep_id"
-    t.integer "forearm_id"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,13 +40,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cardios", force: :cascade do |t|
-    t.integer "treadmill_id"
-    t.integer "elliptical_id"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,8 +62,18 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "distance"
     t.integer "incline"
     t.integer "resistance"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.string "event_type"
+    t.json "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "forearms", force: :cascade do |t|
@@ -82,6 +81,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,14 +91,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "legs", force: :cascade do |t|
-    t.integer "hamstring_id"
-    t.integer "calf_id"
-    t.integer "quad_id"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -108,13 +101,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "lower_bodies", force: :cascade do |t|
-    t.integer "abdominal_id"
-    t.integer "lower_back_id"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -124,6 +111,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -133,6 +121,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -143,6 +132,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "time"
     t.integer "incline"
     t.float "distance"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -152,6 +142,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -161,14 +152,7 @@ ActiveRecord::Schema.define(version: 20170801161428) do
     t.integer "weight"
     t.integer "set"
     t.integer "rep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "upper_bodies", force: :cascade do |t|
-    t.integer "chest_id"
-    t.integer "shoulder_id"
-    t.integer "upper_back_id"
+    t.integer "workout_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -193,14 +177,22 @@ ActiveRecord::Schema.define(version: 20170801161428) do
 
   create_table "workout_data", force: :cascade do |t|
     t.date "date"
-    t.integer "upper_body_id"
-    t.integer "lower_body_id"
-    t.integer "arm_id"
-    t.integer "leg_id"
-    t.integer "cardio_id"
+    t.integer "chest_id"
+    t.integer "shoulder_id"
+    t.integer "abdominal_id"
+    t.integer "bicep_id"
+    t.integer "tricep_id"
+    t.integer "hamstring_id"
+    t.integer "quad_id"
+    t.integer "treadmill_id"
+    t.integer "elliptical_id"
+    t.integer "upper_back_id"
+    t.integer "lower_back_id"
+    t.integer "forearm_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "users"
 end

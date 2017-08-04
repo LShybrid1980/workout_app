@@ -19,7 +19,7 @@
         <td><%= link_to calf.weight, calf %></td>
         <td><%= link_to calf.set, calf %></td>
         <td><%= link_to calf.rep, calf %></td>
-        <td><%= link_to 'Edit', edit_calf_path(calf) %> | 
+        <td><%= link_to 'Edit', editworkout_data__calf_path(calf) %> | 
             <%= link_to 'Destroy', calf, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Calves Workout Data', new_calf_path, class: 'btn btn-primary' %>
+<%= link_to 'New Calves Workout Data', new_workout_data_calf_path, class: 'btn btn-primary' %>
         
         
         

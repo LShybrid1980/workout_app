@@ -15,12 +15,12 @@
   <tbody>
     <% @forearms.each do |forearm| %>
       <tr>
-        <td><%= link_to forearm.status_type, forearm %></td>
-        <td><%= link_to forearm.weight, forearm %></td>
-        <td><%= link_to forearm.set, forearm %></td>
-        <td><%= link_to forearm.rep, forearm %></td>
-        <td><%= link_to 'Edit', edit_forearm_path(forearm) %> | 
-            <%= link_to 'Destroy', forearm, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to forearm.status_type, workout_data_forearm_path %></td>
+        <td><%= link_to forearm.weight, workout_data_forearm_path %></td>
+        <td><%= link_to forearm.set, workout_data_forearm_path %></td>
+        <td><%= link_to forearm.rep, workout_data_forearm_path %></td>
+        <td><%= link_to 'Edit', edit_workout_data_forearm_path(forearm) %> | 
+            <%= link_to 'Destroy', workout_data_forearm_path, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Forearms Workout Data', new_forearm_path, class: 'btn btn-primary' %>
+<%= link_to 'New Forearms Workout Data', new_workout_data_forearm_path, class: 'btn btn-primary' %>
         
         
         

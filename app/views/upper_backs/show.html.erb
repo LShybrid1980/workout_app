@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= upper_back.status_type %></h2>
-<h2><%= upper_back.weight %></h2>
-<h2><%= upper_back.set %></h2>
-<h2><%= upper_back.rep %></h2>
+<h2>Name: <%= upper_back.status_type %></h2>
+<h2>Weight: <%= upper_back.weight %> lbs</h2>
+<h2>Sets: <%= upper_back.set %></h2>
+<h2>Reps: <%= upper_back.rep %></h2>
 
-<%= link_to 'Edit', edit_upper_back_path(upper_back) %> |
-<%= link_to 'Back', upper_backs_path %>
+<%= link_to 'Edit', edit_workout_data_upper_back_path(upper_back) %> |
+<%= link_to 'Back', workout_data_upper_backs_path %>

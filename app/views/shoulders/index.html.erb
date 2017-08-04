@@ -19,7 +19,7 @@
         <td><%= link_to shoulder.weight, shoulder %></td>
         <td><%= link_to shoulder.set, shoulder %></td>
         <td><%= link_to shoulder.rep, shoulder %></td>
-        <td><%= link_to 'Edit', edit_shoulder_path(shoulder) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_shoulder_path(shoulder) %> | 
             <%= link_to 'Destroy', shoulder, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Shoulders Workout Data', new_shoulder_path, class: 'btn btn-primary' %>
+<%= link_to 'New Shoulders Workout Data', new_workout_data_shoulder_path, class: 'btn btn-primary' %>
         
         
         

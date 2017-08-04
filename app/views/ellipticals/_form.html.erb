@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@elliptical, url: ellipticals_path(@elliptical)) do |f| %>
+  <%= form_for(@elliptical, url: workout_data_ellipticals_path(@workout_data, @elliptical)) do |f| %>
     <% if @elliptical.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@elliptical.errors.count, "error") %> prohibited this ellipticals workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Core Workout', 'Core Workout'], ['Short Interval', 'Short Interval'], ['Interval Workout', 'Interval Workout'], ['Interval Shrinking Recovery', 'Interval Shrinking Recovery'], ['30 Minute Workout', '30 Minute Workout']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Core Workout', 'Elliptical Core Workout'], ['Short Interval', 'Elliptical Short Interval'], ['Interval Workout', 'Elliptical Interval Workout'], ['Interval Shrinking Recovery', 'Elliptical Interval Shrinking Recovery'], ['30 Minute Workout', 'Elliptical 30 Minute Workout']])) %><br><br>
         </div>   
       </div>
 

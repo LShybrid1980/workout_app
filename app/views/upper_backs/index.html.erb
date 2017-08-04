@@ -19,7 +19,7 @@
         <td><%= link_to upper_back.weight, upper_back %></td>
         <td><%= link_to upper_back.set, upper_back %></td>
         <td><%= link_to upper_back.rep, upper_back %></td>
-        <td><%= link_to 'Edit', edit_upper_back_path(upper_back) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_upper_back_path(upper_back) %> | 
             <%= link_to 'Destroy', upper_back, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Upper Backs Workout Data', new_upper_back_path, class: 'btn btn-primary' %>
+<%= link_to 'New Upper Backs Workout Data', new_workout_data_upper_back_path, class: 'btn btn-primary' %>
         
         
         

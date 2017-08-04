@@ -1,53 +1,80 @@
-class TreadmillsController < ApplicationController
-  before_action :set_treadmill, only: [:show, :edit, :update, :destroy]
-
+class TreadmillsController < ApplicationController   
+  before_action :find_workout_data, only: [:index, :new, :show, :edit]
+  before_action :authenticate_user!
+  
   def index
-    @treadmills = Treadmill.all
-    render :index, locals: { treadmills: @treadmills}
+    @treadmills = @workout_data.treadmills
+    render :index, locals: { workout_data: @workout_data, treadmills: @treadmills }
   end
 
   def show
-    render :show, locals: {treadmill: @treadmill }
+    @treadmill = treadmill.find(params[:id])
+    Event.create(user: current_user, event_type: "viewed_treadmill", details: { id: params[:id], workout_data_id: params[:workout_data_id] })
+
+    render :show, locals: { workout_data: @workout_data, treadmill: @treadmill }
+  rescue ActiveRecord::RecordNotFound
+    render "errors/not_found", status: :not_found  
   end
 
   def new
     @treadmill = Treadmill.new
+    render :new, locals: { workout_data: @workout_data, treadmill: @treadmill }
   end
 
-  def edit
-    render :edit, locals: { treadmill: @treadmill }
-  end
-
-  def create
+  def create   
     @treadmill = Treadmill.new(treadmill_params)
 
     if @treadmill.save
-      redirect_to @treadmill, notice: 'Treadmills Workout data was successfully created.'
+      Event.create(user: current_user, event_type: "created_treadmill", details: { id: params[:id], workout_data_id: params[:workout_data_id], params: treadmill_params })
+      redirect_to workout_data_treadmill_path(@workout_data_id = params[:workout_data_id], @treadmill), notice: 'Treadmills Workout data was successfully created.'
     else
-      render :new, locals: { treadmill: @treadmill }
+      render :new, locals: { workout_data: @workout_data, treadmill: @treadmill }
     end
   end
 
+  def edit
+    @treadmill = Treadmill.find(params[:id])
+
+    render :edit, locals: { workout_data: @workout_data, treadmill: @treadmill }
+  rescue ActiveRecord::RecordNotFound
+    render "errors/not_found", status: :not_found
+  end
+
   def update
+    @treadmill = Treadmill.find(params[:id])
+
     if @treadmill.update(treadmill_params)
-      redirect_to @treadmill, notice: 'Treadmills Workout data was successfully updated.'
+      Event.create(user: current_user, event_type: "created_treadmill", details: { id: params[:id], manufacturer_id: params[:manufacturer_id], params: product_params })
+      redirect_to workout_data_treadmills_path(@workout_data_id = params[:workout_data_id], @treadmill), notice: "Treadmills was updated successfuly."
     else
-      render :edit, locals: { treadmill: @treadmill }
+      render :edit, locals: { workout_data: @workout_data, treadmill: @treadmill }
     end
   end
 
   def destroy
-    @treadmill.destroy
-    redirect_to treadmills_path, notice: 'Treadmills Workout data was successfully destroyed.'
+    service = DestroyTreadmill.new(current_user, params[:id], params[:workout_data_id])
+    service.call
+
+    if service.success?
+      redirect_to workout_data_path(service.workout_data), notice: 'Treadmills was successfully destroyed.'
+    elsif service.error == :not_found
+      render "errors/not_found", status: :not_found
+    else
+      redirect_to workout_data_path(service.workout_data), error: "An unknown error occurred and we couldn't destroy the treadmill."
+    end
   end
 
   private
 
-  def set_treadmill
-   @treadmill = Treadmill.find(params[:id])
+  def find_workout_data
+    @workout_data = WorkoutData.find(params[:workout_data_id])
+  rescue ActiveRecord::RecordNotFound
+    render "errors/not_found", status: :not_found
   end
 
   def treadmill_params
-    params.require(:treadmill).permit(:status_type, :speed, :time, :incline, :distance)
-  end
+    new_params = params.require(:treadmill).permit(:status_type, :weight, :set, :rep)
+    new_params['workout_data_id'] = params[:workout_data_id]
+    new_params
+  end 
 end

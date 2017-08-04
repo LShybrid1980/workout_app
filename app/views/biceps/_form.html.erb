@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@bicep, url: biceps_path(@bicep)) do |f| %>
+  <%= form_for(@bicep, url: workout_data_biceps_path(@workout_data, @bicep)) do |f| %>
     <% if @bicep.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@bicep.errors.count, "error") %> prohibited this biceps workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Barbell Curl', 'Barbell Curl'], ['Alternate Hammer Curl', 'Alternate Hammer Curl'], ['Dumbbell Curl', 'Dumbbell Curl'], ['Preacher Curl', 'Preacher Curl'], ['Cable Curl', 'Cable Curl'], ['Bar Curl', 'Bar Curl'], ['Drag Curl', 'Drag Curl'], ['Concentration Curls', 'Concentration Curls'], ['EZ-bar Curl', 'EZ-bar Curl'], ['Cable Curls', 'Cable Curls']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Barbell Curl', 'Biceps Barbell Curl'], ['Alternate Hammer Curl', 'Biceps Alternate Hammer Curl'], ['Dumbbell Curl', 'Biceps Dumbbell Curl'], ['Preacher Curl', 'Biceps Preacher Curl'], ['Cable Curl', 'Biceps Cable Curl'], ['Bar Curl', 'Biceps Bar Curl'], ['Drag Curl', 'Biceps Drag Curl'], ['Concentration Curls', 'Biceps Concentration Curls'], ['EZ-bar Curl', 'Biceps EZ-bar Curl']])) %><br><br>
         </div>  
       </div>
 

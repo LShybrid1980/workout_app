@@ -21,7 +21,7 @@
         <td><%= link_to treadmill.time, treadmill %></td>
         <td><%= link_to treadmill.incline, treadmill %></td>
         <td><%= link_to treadmill.distance, treadmill %></td>
-        <td><%= link_to 'Edit', edit_treadmill_path(treadmill) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_treadmill_path(treadmill) %> | 
             <%= link_to 'Destroy', treadmill, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -31,7 +31,7 @@
 
 <br>
 
-<%= link_to 'New Treadmills Workout Data', new_treadmill_path, class: 'btn btn-primary' %>
+<%= link_to 'New Treadmills Workout Data', new_workout_data_treadmill_path, class: 'btn btn-primary' %>
         
         
         

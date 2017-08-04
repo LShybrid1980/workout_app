@@ -1,5 +1,5 @@
 class Shoulder < ApplicationRecord
-  belongs_to :upper_body
+  belongs_to :workout_data
 
   validates :status_type, presence: true
   validates :weight, presence: true

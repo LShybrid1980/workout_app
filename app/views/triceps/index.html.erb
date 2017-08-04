@@ -19,7 +19,7 @@
         <td><%= link_to tricep.weight, tricep %></td>
         <td><%= link_to tricep.set, tricep %></td>
         <td><%= link_to tricep.rep, tricep %></td>
-        <td><%= link_to 'Edit', edit_tricep_path(tricep) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_tricep_path(tricep) %> | 
             <%= link_to 'Destroy', tricep, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Triceps Workout Data', new_tricep_path, class: 'btn btn-primary' %>
+<%= link_to 'New Triceps Workout Data', new_workout_data_tricep_path, class: 'btn btn-primary' %>
         
         
         

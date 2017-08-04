@@ -1,5 +1,5 @@
 class Treadmill < ApplicationRecord
-  belongs_to :cardio
+  belongs_to :workout_data
 
   validates :status_type, presence: true
   validates :speed, presence: true

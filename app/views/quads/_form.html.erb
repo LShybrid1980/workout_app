@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@quad, url: quads_path(@quad)) do |f| %>
+  <%= form_for(@quad, url: workout_data_quads_path(@workout_data, @quad)) do |f| %>
     <% if @quad.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@quad.errors.count, "error") %> prohibited this quads workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Barbell Full Squat', 'Barbell Full Squat'], ['Barbell Walking Lunge', 'Barbell Walking Lunge'], ['Barbell Step Ups', 'Barbell Step Ups'], ['Barbell Lunge', 'Barbell Lunge'], ['Bench Jump', 'Bench Jump'], ['Bodyweight Lunge', 'Bodyweight Lunge']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Barbell Full Squat', 'Barbell Full Squat (Quads)'], ['Barbell Walking Lunge', 'Barbell Walking Lunge (Quads)'], ['Barbell Step Ups', 'Barbell Step Ups (Quads)'], ['Barbell Lunge', 'Barbell Lunge (Quads)'], ['Bench Jump', 'Bench Jump (Quads)'], ['Bodyweight Lunge', 'Bodyweight Lunge (Quads)']])) %><br><br>
         </div>  
       </div>
 

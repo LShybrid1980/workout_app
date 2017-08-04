@@ -19,7 +19,7 @@
         <td><%= link_to hamstring.weight, hamstring %></td>
         <td><%= link_to hamstring.set, hamstring %></td>
         <td><%= link_to hamstring.rep, hamstring %></td>
-        <td><%= link_to 'Edit', edit_hamstring_path(hamstring) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_hamstring_path(hamstring) %> | 
             <%= link_to 'Destroy', hamstring, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Hamstrings Workout Data', new_hamstring_path, class: 'btn btn-primary' %>
+<%= link_to 'New Hamstrings Workout Data', new_workout_data_hamstring_path, class: 'btn btn-primary' %>
         
         
         

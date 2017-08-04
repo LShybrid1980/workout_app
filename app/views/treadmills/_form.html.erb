@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@treadmill, url: treadmills_path(@treadmill)) do |f| %>
+  <%= form_for(@treadmill, url: workout_data_treadmills_path(@workout_data, @treadmill)) do |f| %>
     <% if @treadmill.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@treadmill.errors.count, "error") %> prohibited this treadmills workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Walk-jog', 'Walk-jog'], ['Switch to Sprints', 'Switch to Sprints'], ['Pyramid Intervals', 'Pyramid Intervals'], ['Get in, Get out', 'Get in, Get out'], ['Work your way up the ladder', 'Work your way up the ladder'], ['The 500-calorie', 'The 500-calorie'], ['Climb a Hill', 'Climb a Hill'], ['Go for a Hike', 'Go for a Hike'], ['Graduate to a Mountain', 'Graduate to a Mountain'], ['Build Strength', 'Build Strength'], ['Blast Fat', 'Blast Fat'], ['Do Double Duty', 'Do Double Duty']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Walk-jog', 'Walk-jog (Treadmill)'], ['Switch to Sprints', 'Switch to Sprints (Treadmill)'], ['Pyramid Intervals', 'Pyramid Intervals (Treadmill)'], ['Get in, Get out', 'Get in, Get out (Treadmill)'], ['Work your way up the ladder', 'Work your way up the ladder (Treadmill)'], ['The 500-calorie', 'The 500-calorie (Treadmill)'], ['Climb a Hill', 'Climb a Hill (Treadmill)'], ['Go for a Hike', 'Go for a Hike (Treadmill)'], ['Graduate to a Mountain', 'Graduate to a Mountain (Treadmill)'], ['Build Strength', 'Build Strength (Treadmill)'], ['Blast Fat', 'Blast Fat (Treadmill)'], ['Do Double Duty', 'Do Double Duty (Treadmill)']])) %><br><br>
         </div> 
       </div>
 

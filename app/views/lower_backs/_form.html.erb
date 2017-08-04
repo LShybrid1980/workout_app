@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@lower_back, url: lower_backs_path(@lower_back)) do |f| %>
+  <%= form_for(@lower_back, url: workout_data_lower_backs_path(@workout_data, @lower_back)) do |f| %>
     <% if @lower_back.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@lower_back.errors.count, "error") %> prohibited this lower_backs workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Deficit Deadlift', 'Deficit Deadlift'], ['Deadlift with Bands', 'Deadlift with Bands'], ['Rack Pulls', 'Rack Pulls'], ['Hyperextensions with No Hyperextension Bench', 'Hyperextensions with No Hyperextension Bench'], ['Seated Back Extension', 'Seated Back Extension']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Deficit Deadlift', 'Deficit Deadlift (Lower Back)'], ['Deadlift with Bands', 'Deadlift with Bands (Lower Back)'], ['Rack Pulls', 'Rack Pulls (Lower Back)'], ['Hyperextensions with No Hyperextension Bench', 'Hyperextensions with No Hyperextension Bench (Lower Back)'], ['Seated Back Extension', 'Seated Back Extension (Lower Back)']])) %><br><br>
         </div>  
       </div>
 

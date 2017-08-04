@@ -1,5 +1,5 @@
 class Abdominal < ApplicationRecord
-  belongs_to :lower_body
+  belongs_to :workout_data
 
   validates :status_type, presence: true
   validates :weight, presence: true

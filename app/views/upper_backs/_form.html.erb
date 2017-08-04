@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@upper_back, url: upper_backs_path(@upper_back)) do |f| %>
+  <%= form_for(@upper_back, url: workout_data_upper_backs_path(@workout_data, @upper_back)) do |f| %>
     <% if @upper_back.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@upper_back.errors.count, "error") %> prohibited this Upper Backs workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Single-arm Barbell Row', 'Single-arm Barbell Row'], ['Single-arm Cable Row', 'Single-arm Cable Row'], ['Single-arm Smith Machine Shrug', 'Single-arm Smith Machine Shrug'], ['Single-arm Overhead Machine Pulldown', 'Single-arm Overhead Machine Pulldown'], ['Incline Dumbbell Row', 'Incline Dumbbell Row'], ['Bent-over Dumbbell Row', 'Bent-over Dumbbell Row'], ['Wide-grip Lat Pull-down', 'Wide-grip Lat Pull-down']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Single-arm Barbell Row', 'Single-arm Barbell Row (Upper Back)'], ['Single-arm Cable Row', 'Single-arm Cable Row (Upper Back)'], ['Single-arm Smith Machine Shrug', 'Single-arm Smith Machine Shrug (Upper Back)'], ['Single-arm Overhead Machine Pulldown', 'Single-arm Overhead Machine Pulldown (Upper Back)'], ['Incline Dumbbell Row', 'Incline Dumbbell Row (Upper Back)'], ['Bent-over Dumbbell Row', 'Bent-over Dumbbell Row (Upper Back)'], ['Wide-grip Lat Pull-down', 'Wide-grip Lat Pull-down (Upper Back)']])) %><br><br>
         </div> 
       </div>
 

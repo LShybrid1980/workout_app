@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@forearm, url: forearms_path(@forearm)) do |f| %>
+  <%= form_for(@forearm, url: workout_data_forearms_path(@workout_data, @forearm)) do |f| %>
     <% if @forearm.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@forearm.errors.count, "error") %> prohibited this forearms workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Cable Wrist Curl', 'Cable Wrist Curl'], ['Finger Curls', 'Finger Curls'], ['Wrist Roller', 'Wrist Roller'], ['Wrist Circles', 'Wrist Circles'], ['Palm-down Wrist Curl', 'Palm-down Wrist Curl'], ['Palm-up Wrist Curl', 'Palm-up Wrist Curl']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Cable Wrist Curl', 'Cable Wrist Curl (Forearms)'], ['Finger Curls', 'Finger Curls (Forearms)'], ['Wrist Roller', 'Wrist Roller (Forearms)'], ['Wrist Circles', 'Wrist Circles (Forearms)'], ['Palm-down Wrist Curl', 'Palm-down Wrist Curl (Forearms)'], ['Palm-up Wrist Curl', 'Palm-up Wrist Curl (Forearms)']])) %><br><br>
         </div>    
       </div>
 

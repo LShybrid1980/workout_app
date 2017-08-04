@@ -1,5 +1,5 @@
 class Bicep < ApplicationRecord
-  belongs_to :arm
+  belongs_to :workout_data
 
   validates :status_type, presence: true
   validates :weight, presence: true

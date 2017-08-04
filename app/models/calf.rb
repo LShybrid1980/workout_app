@@ -1,5 +1,5 @@
 class Calf < ApplicationRecord
-  belongs_to :leg
+  belongs_to :workout_data
 
   validates :status_type, presence: true
   validates :weight, presence: true

@@ -1,5 +1,6 @@
 class WorkoutDatasController < ApplicationController
-  before_action :set_workout_data, only: [:show, :edit, :update, :destroy]
+  before_action :find_workout_data, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @workout_datas = WorkoutData.all
@@ -7,11 +8,12 @@ class WorkoutDatasController < ApplicationController
   end
 
   def show
-    render :show, locals: {workout_data: @workout_data }
+    render :show, locals: { workout_data: @workout_data }
   end
 
   def new
     @workout_data = WorkoutData.new
+    render :new, locals: { workout_data: @workout_data }
   end
 
   def edit
@@ -44,7 +46,7 @@ class WorkoutDatasController < ApplicationController
 
   private
 
-  def set_workout_data
+  def find_workout_data
    @workout_data = WorkoutData.find(params[:id])
   end
 

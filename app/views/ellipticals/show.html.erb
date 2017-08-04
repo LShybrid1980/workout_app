@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= elliptical.status_type %></h2>
-<h2><%= elliptical.speed %> miles per hour</h2>
-<h2><%= elliptical.time %> minutes</h2>
-<h2><%= elliptical.distance %> miles</h2>
-<h2><%= elliptical.resistance %></h2>
-<h2><%= elliptical.incline %></h2>
+<h2>Name: <%= elliptical.status_type %></h2>
+<h2>Speed: <%= elliptical.speed %> mile/s per hour</h2>
+<h2>Time: <%= elliptical.time %> minute/s</h2>
+<h2>Distance: <%= elliptical.distance %> mile/s</h2>
+<h2>Resistance: <%= elliptical.resistance %> pound/s</h2>
+<h2>Incline: <%= elliptical.incline %> degree/s</h2>
 
-<%= link_to 'Edit', edit_elliptical_path(elliptical) %> |
-<%= link_to 'Back', ellipticals_path %>
+<%= link_to 'Edit', edit_workout_data_elliptical_path(elliptical) %> |
+<%= link_to 'Back', workout_data_ellipticals_path %>
 

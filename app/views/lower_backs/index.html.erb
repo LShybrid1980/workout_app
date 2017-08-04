@@ -19,7 +19,7 @@
         <td><%= link_to lower_back.weight, lower_back %></td>
         <td><%= link_to lower_back.set, lower_back %></td>
         <td><%= link_to lower_back.rep, lower_back %></td>
-        <td><%= link_to 'Edit', edit_lower_back_path(lower_back) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_lower_back_path(lower_back) %> | 
             <%= link_to 'Destroy', lower_back, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Lower Backs Workout Data', new_lower_back_path, class: 'btn btn-primary' %>
+<%= link_to 'New Lower Backs Workout Data', new_workout_data_lower_back_path, class: 'btn btn-primary' %>
         
         
         

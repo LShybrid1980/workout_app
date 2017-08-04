@@ -1,4 +1,4 @@
-<div class='page-header'>
+  <div class='page-header'>
   <h1>Your Current Abs Workout</h1>
 </div>
 
@@ -15,11 +15,11 @@
   <tbody>
     <% @abdominals.each do |abdominal| %>
       <tr>
-        <td><%= link_to abdominal.status_type, abdominal %></td>
-        <td><%= link_to abdominal.weight, abdominal %></td>
-        <td><%= link_to abdominal.set, abdominal %></td>
-        <td><%= link_to abdominal.rep, abdominal %></td>
-        <td><%= link_to 'Edit', edit_abdominal_path(abdominal) %> | 
+        <td><%= link_to abdominal.status_type, workout_data_abdominal_path %></td>
+        <td><%= link_to abdominal.weight, workout_data_abdominal_path %></td>
+        <td><%= link_to abdominal.set, workout_data_abdominal_path %></td>
+        <td><%= link_to abdominal.rep, workout_data_abdominal_path %></td>
+        <td><%= link_to 'Edit', edit_workout_data_abdominal_path(abdominal) %> | 
             <%= link_to 'Destroy', abdominal, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Abdominals Workout Data', new_abdominal_path, class: 'btn btn-primary' %>
+<%= link_to 'New Abdominals Workout Data', new_workout_data_abdominal_path, class: 'btn btn-primary' %>

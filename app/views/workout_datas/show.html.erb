@@ -4,11 +4,19 @@
 
 <h3>What do you want to workout today?</h3>
 
-<%= link_to 'Arms', new_arm_path %> |
-<%= link_to 'Cardio', new_cardio_path %> |
-<%= link_to 'Legs', new_leg_path %> |
-<%= link_to 'Lower Body', new_lower_body_path %> |
-<%= link_to 'Upper Body', new_upper_body_path %> |
+<%= link_to 'Chests', new_workout_data_chest_path(workout_data) %> |
+<%= link_to 'Shoulders', new_workout_data_shoulder_path(workout_data) %> |
+<%= link_to 'Upper Back', new_workout_data_upper_back_path(workout_data) %> |
+<%= link_to 'Abs', new_workout_data_abdominal_path(workout_data) %> |
+<%= link_to 'Lower Back', new_workout_data_lower_back_path(workout_data) %> |
+<%= link_to 'Biceps', new_workout_data_bicep_path(workout_data) %> |
+<%= link_to 'Triceps', new_workout_data_tricep_path(workout_data) %> |
+<%= link_to 'Forearms', new_workout_data_forearm_path(workout_data) %> |
+<%= link_to 'Calves', new_workout_data_calf_path(workout_data) %> |
+<%= link_to 'Hamstrings', new_workout_data_hamstring_path(workout_data) %> |
+<%= link_to 'Quads', new_workout_data_quad_path(workout_data) %> |
+<%= link_to 'Elliptical', new_workout_data_elliptical_path(workout_data) %> |
+<%= link_to 'Treadmill', new_workout_data_treadmill_path(workout_data) %> |
 <%= link_to 'Back', workout_datas_path %> |
 <%= link_to 'Edit', edit_workout_data_path(workout_data) %> |
 <%= link_to 'Back', workout_datas_path %>

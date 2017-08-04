@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@calf, url: calves_path(@calf)) do |f| %>
+  <%= form_for(@calf, url: workout_data_calves_path(@workout_data, @calf)) do |f| %>
     <% if @calf.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@calf.errors.count, "error") %> prohibited this calves workout data from being saved:</h2>

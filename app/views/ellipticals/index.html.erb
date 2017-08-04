@@ -23,7 +23,7 @@
         <td><%= link_to elliptical.distance, elliptical %></td>
         <td><%= link_to elliptical.resistance, elliptical %></td>
         <td><%= link_to elliptical.incline, elliptical %></td>
-        <td><%= link_to 'Edit', edit_elliptical_path(elliptical) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_elliptical_path(elliptical) %> | 
             <%= link_to 'Destroy', elliptical, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -33,7 +33,7 @@
 
 <br>
 
-<%= link_to 'New Ellipticals Workout Data', new_elliptical_path, class: 'btn btn-primary' %>
+<%= link_to 'New Ellipticals Workout Data', new_workout_data_elliptical_path, class: 'btn btn-primary' %>
               
         
         

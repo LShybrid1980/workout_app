@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@hamstring, url: hamstrings_path(@hamstring)) do |f| %>
+  <%= form_for(@hamstring, url: workout_data_hamstrings_path(@workout_data, @hamstring)) do |f| %>
     <% if @hamstring.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@hamstring.errors.count, "error") %> prohibited this hamstrings workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Barbell Deadlift', 'Barbell Deadlift'], ['Clean Deadlift', 'Clean Deadlift'], ['Lying Leg Curls', 'Lying Leg Curls'], ['Natural Glute Ham Raise', 'Natural Glute Ham Raise'], ['Romanian Deadlift From Deficit', 'Romanian Deadlift From Deficit'], ['Sumo Deadlift', 'Sumo Deadift'], ['Dumbbell Clean', 'Dumbbell Clean']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Barbell Deadlift', 'Barbell Deadlift (Hamstring)'], ['Clean Deadlift', 'Clean Deadlift (Hamstring)'], ['Lying Leg Curls', 'Lying Leg Curls (Hamstring)'], ['Natural Glute Ham Raise', 'Natural Glute Ham Raise (Hamstring)'], ['Romanian Deadlift From Deficit', 'Romanian Deadlift From Deficit (Hamstring)'], ['Sumo Deadlift', 'Sumo Deadift (Hamstring)'], ['Dumbbell Clean', 'Dumbbell Clean (Hamstring)']])) %><br><br>
         </div>  
       </div>
 

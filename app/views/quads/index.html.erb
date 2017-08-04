@@ -19,7 +19,7 @@
         <td><%= link_to quad.weight, quad %></td>
         <td><%= link_to quad.set, quad %></td>
         <td><%= link_to quad.rep, quad %></td>
-        <td><%= link_to 'Edit', edit_quad_path(quad) %> | 
+        <td><%= link_to 'Edit', edit_workout_data_quad_path(quad) %> | 
             <%= link_to 'Destroy', quad, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
@@ -29,7 +29,7 @@
 
 <br>
 
-<%= link_to 'New Quads Workout Data', new_quad_path, class: 'btn btn-primary' %>
+<%= link_to 'New Quads Workout Data', new_workout_data_quad_path, class: 'btn btn-primary' %>
         
         
         

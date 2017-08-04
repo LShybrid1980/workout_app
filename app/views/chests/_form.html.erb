@@ -1,5 +1,5 @@
 <div class='well bs-component col-lg-8'>
-  <%= form_for(@chest, url: chests_path(@chest)) do |f| %>
+  <%= form_for(@chest, url: workout_data_chests_path(@workout_data, @chest)) do |f| %>
     <% if @chest.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@chest.errors.count, "error") %> prohibited this chests workout data from being saved:</h2>
@@ -15,7 +15,7 @@
     <div class='form-group'>
         <%= f.label "Name", class: 'col-lg-2' %>
         <div class='col-lg-10'>
-          <%= f.select(:status_type, options_for_select([['Push Ups', 'Push Ups'], ['Barbell Bench Press', 'Barbell Bench Press'], ['Barbell Incline Bench Press', 'Barbell Incline Bench Press'], ['Bodyweight Flyes', 'Bodyweight Flyes'], ['Bent-arm Dumbbell Pullover', 'Bent-arm Dumbbell Pullover'], ['Cable Chest Press', 'Cable Chest Press'], ['Butterfly', 'Butterfly'], ['Cable Crossover', 'Cable Crossover'], ['Decline Dumbbell Bench Press', 'Decline Dumbbell Bench Press'], ['Decline Dumbbell Flyes', 'Decline Dumbbell Flyes'], ['Decline Smith Press']])) %><br><br>
+          <%= f.select(:status_type, options_for_select([['Push Ups', 'Push Ups'], ['Barbell Bench Press', 'Barbell Bench Press (Chest)'], ['Barbell Incline Bench Press', 'Barbell Incline Bench Press (Chest)'], ['Bodyweight Flyes', 'Bodyweight Flyes (Chest)'], ['Bent-arm Dumbbell Pullover', 'Bent-arm Dumbbell Pullover (Chest)'], ['Cable Chest Press', 'Cable Chest Press'], ['Butterfly', 'Butterfly (Chest)'], ['Cable Crossover', 'Cable Crossover (Chest)'], ['Decline Dumbbell Bench Press', 'Decline Dumbbell Bench Press (Chest)'], ['Decline Dumbbell Flyes', 'Decline Dumbbell Flyes (Chest)'], ['Decline Smith Press', 'Decline Smith Press (Chest)']])) %><br><br>
         </div>  
       </div>
 

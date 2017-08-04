@@ -1,53 +1,82 @@
-class AbdominalsController < ApplicationController
-  before_action :set_abdominal, only: [:show, :edit, :update, :destroy]
-
+class AbdominalsController < ApplicationController   
+  before_action :find_workout_data, only: [:index, :new, :show, :edit]
+  before_action :authenticate_user!
+  
   def index
-    @abdominals = Abdominal.all
-    render :index, locals: { abdominals: @abdominals}
+    @abdominals = @workout_data.abdominals
+    render :index, locals: { workout_data: @workout_data, abdominals: @abdominals }
   end
 
   def show
-    render :show, locals: {abdominal: @abdominal }
+    @abdominal = Abdominal.find(params[:id])
+    Event.create(user: current_user, event_type: "viewed_abdominal", details: { id: params[:id], workout_data_id: params[:workout_data_id] })
+
+    render :show, locals: { workout_data: @workout_data, abdominal: @abdominal }
+  rescue ActiveRecord::RecordNotFound
+    render "errors/not_found", status: :not_found  
   end
 
   def new
     @abdominal = Abdominal.new
+    render :new, locals: { workout_data: @workout_data, abdominal: @abdominal }
   end
 
-  def edit
-    render :edit, locals: { abdominal: @abdominal }
-  end
-
-  def create
+  def create   
     @abdominal = Abdominal.new(abdominal_params)
 
     if @abdominal.save
-      redirect_to @abdominal, notice: 'Abs Workout data was successfully created.'
+      Event.create(user: current_user, event_type: "created_abdominal", details: { id: params[:id], workout_data_id: params[:workout_data_id], params: abdominal_params })
+      redirect_to workout_data_abdominal_path(@workout_data_id = params[:workout_data_id], @abdominal), notice: 'Abs Workout data was successfully created.'
     else
-      render :new, locals: { abdominal: @abdominal }
+      render :new, locals: { workout_data: @workout_data, abdominal: @abdominal }
     end
   end
 
+  def edit
+    @abdominal = Abdominal.find(params[:id])
+
+    render :edit, locals: { workout_data: @workout_data, abdominal: @abdominal }
+  rescue ActiveRecord::RecordNotFound
+    render "errors/not_found", status: :not_found
+  end
+
   def update
+    @abdominal = Abdominal.find(params[:id])
+
     if @abdominal.update(abdominal_params)
-      redirect_to @abdominal, notice: 'Abs Workout data was successfully updated.'
+      Event.create(user: current_user, event_type: "created_abdominal", details: { id: params[:id], manufacturer_id: params[:manufacturer_id], params: product_params })
+      redirect_to workout_data_abdominals_path(@workout_data_id = params[:workout_data_id], @abdominal), notice: "Abs was updated successfuly."
     else
-      render :edit, locals: { abdominal: @abdominal }
+      render :edit, locals: { workout_data: @workout_data, abdominal: @abdominal }
     end
   end
 
   def destroy
-    @abdominal.destroy
-    redirect_to abdominals_path, notice: 'Abs Workout data was successfully destroyed.'
+    service = DestroyAbdominal.new(current_user, params[:id], params[:workout_data_id])
+    service.call
+
+    if service.success?
+      redirect_to workout_data_path(service.workout_data), notice: 'Abs was successfully destroyed.'
+    elsif service.error == :not_found
+      render "errors/not_found", status: :not_found
+    else
+      redirect_to workout_data_path(service.workout_data), error: "An unknown error occurred and we couldn't destroy the abdominal."
+    end
   end
 
   private
 
-  def set_abdominal
-   @abdominal = Abdominal.find(params[:id])
+  def find_workout_data
+    @workout_data = WorkoutData.find(params[:workout_data_id])
+  rescue ActiveRecord::RecordNotFound
+    render "errors/not_found", status: :not_found
   end
 
   def abdominal_params
-    params.require(:abdominal).permit(:status_type, :weight, :set, :rep)
-  end
+    new_params = params.require(:abdominal).permit(:status_type, :weight, :set, :rep)
+    new_params['workout_data_id'] = params[:workout_data_id]
+    new_params
+  end 
 end
+
+

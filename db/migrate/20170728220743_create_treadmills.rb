@@ -6,6 +6,7 @@ class CreateTreadmills < ActiveRecord::Migration[5.1]
       t.integer  :time
       t.integer  :incline
       t.float    :distance
+      t.integer  :workout_data_id
 
       t.timestamps
     end

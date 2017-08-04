@@ -7,6 +7,7 @@ class CreateEllipticals < ActiveRecord::Migration[5.1]
       t.integer  :distance
       t.integer  :incline
       t.integer  :resistance
+      t.integer  :workout_data_id
 
       t.timestamps
     end
